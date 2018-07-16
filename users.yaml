@@ -5,3 +5,4 @@ api_users:
     roles:
       - "spin_stack_manager"
       - "spin_account_manager"
+      - "spin_delivery_manager"

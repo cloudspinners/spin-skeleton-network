@@ -1,5 +1,5 @@
-variable "component" {}
 variable "deployment_identifier" {}
+variable "component" {}
 variable "estate" {}
 variable "base_dns_domain" {}
 

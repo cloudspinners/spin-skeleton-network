@@ -12,5 +12,6 @@ base_dns_domain: OVERRIDE_ME
 bootstrap_arn: "arn:aws:iam::%{hiera('aws_account_id')}:role/spin_account_manager-%{hiera('component')}"
 spin_account_manager_role_arn: "%{hiera('bootstrap_arn')}"
 spin_stack_manager_role_arn: "arn:aws:iam::%{hiera('aws_account_id')}:role/spin_stack_manager-%{hiera('component')}"
+spin_delivery_manager_role_arn: "arn:aws:iam::%{hiera('aws_account_id')}:role/spin_delivery_manager-%{hiera('component')}"
 
 statebucket_role_arn: "%{hiera('spin_stack_manager_role_arn')}"
