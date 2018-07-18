@@ -1,0 +1,11 @@
+---
+vars:
+  region: "%{hiera('region')}"
+  component: "%{hiera('component')}"
+  estate: "%{hiera('estate')}"
+  aws_profile: "%{hiera('aws_profile')}"
+  pgp_key_for_secrets: "%{hiera('pgp_key_for_secrets')}"
+  assume_role_arn: "%{hiera('spin_account_manager_role_arn')}"
+
+state:
+  type: local

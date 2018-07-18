@@ -1,0 +1,17 @@
+---
+estate: cloudspin
+component: network
+service: test
+region: eu-west-1
+
+# You will need to override these in component-local.yaml
+aws_profile: OVERRIDE_ME
+base_dns_domain: OVERRIDE_ME
+
+# This is purely to have a simpler variable name to override for bootstrapping
+bootstrap_arn: "arn:aws:iam::%{hiera('aws_account_id')}:role/spin_account_manager-%{hiera('component')}"
+spin_account_manager_role_arn: "%{hiera('bootstrap_arn')}"
+spin_stack_manager_role_arn: "arn:aws:iam::%{hiera('aws_account_id')}:role/spin_stack_manager-%{hiera('component')}"
+spin_delivery_manager_role_arn: "arn:aws:iam::%{hiera('aws_account_id')}:role/spin_delivery_manager-%{hiera('component')}"
+
+statebucket_role_arn: "%{hiera('spin_stack_manager_role_arn')}"

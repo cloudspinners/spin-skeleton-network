@@ -72,7 +72,9 @@ usage=" USAGE: go <rake command>"
 
 COMMAND="$@"
 
+echo "KSM: TERM: ${TERM}"
 if [ -n "${TERM}" -a "${TERM}" != "dumb" ] ; then
+  echo "KSM2"
   bold=`tput bold`
   green=`tput setaf 2`
   reset=`tput sgr0`
@@ -80,6 +82,7 @@ if [ -n "${TERM}" -a "${TERM}" != "dumb" ] ; then
   echo ${bold}${green}">>> Running command: [ go $COMMAND ]"${reset}
   echo
 else
+  echo "KSM3"
   echo
   echo ">>> Running command: [ go $COMMAND ]"
   echo

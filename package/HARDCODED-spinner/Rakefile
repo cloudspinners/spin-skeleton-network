@@ -1,4 +1,6 @@
 
+puts "KSM: 101"
+
 require 'rake/clean'
 require 'rake_cloudspin'
 require 'rake_docker'
@@ -10,6 +12,8 @@ CLEAN.include('dist')
 CLOBBER.include('vendor')
 
 task :default => [ :plan ]
+
+puts "KSM: 102"
 
 RakeCloudspin.define_tasks
 
