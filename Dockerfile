@@ -1,8 +1,8 @@
-FROM hashicorp/terraform:light
+FROM alpine:3.7
 MAINTAINER "Kief Morris <cloudspin@kief.com>"
 
-
 RUN apk update && apk upgrade
+
 RUN apk --no-cache add \
   bash \
   ncurses \
@@ -27,8 +27,9 @@ RUN bundle config --global silence_root_warning 1
 COPY ./ /package/
 WORKDIR /package
 
-# RUN gem install rake 
-
 ENV GO_DEBUG=true
 
 RUN ./go -T
+
+ENTRYPOINT ["./go"]
+CMD ["-T"]
