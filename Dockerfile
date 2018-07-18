@@ -24,8 +24,8 @@ COPY ./ /package/
 WORKDIR /package
 
 ENV GO_DEBUG=true
-
 RUN ./go clobber
 
+ENV GO_OFFLINE=true
 ENTRYPOINT ["./go"]
 CMD ["-T"]
