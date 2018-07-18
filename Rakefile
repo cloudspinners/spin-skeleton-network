@@ -15,7 +15,8 @@ RakeCloudspin.define_tasks
 
 namespace :package do
 
-  component ||= 'HARDCODED'
+  estate ||= 'my_estate'
+  component ||= 'my_component'
   metadata = ENV['GIT_SHA'] || 'LOCAL'
   version = Semantic::Version.new("0.0.1+#{metadata}").to_s
   docker_tag = version.gsub(/[\+]/, '_').downcase
@@ -85,7 +86,7 @@ namespace :package do
       {content: docker_tag, to: 'TAG'}
     ]
 
-    t.repository_name = "not_implemented"
+    t.repository_name = "#{estate}/#{component}"
     t.repository_url = "not_implemented"
     t.tags = [docker_tag, 'latest']
   end

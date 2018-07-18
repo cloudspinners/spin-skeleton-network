@@ -18,7 +18,6 @@ RUN apk --no-cache add \
 
 RUN echo 'gem: --no-document' > /etc/gemrc
 RUN echo 'gem: --no-ri' >> /etc/gemrc
-# RUN gem install bundler --no-document && \
 RUN bundle config --global silence_root_warning 1
 
 # RUN addgroup -S spinner && \
