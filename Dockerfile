@@ -25,7 +25,7 @@ WORKDIR /package
 
 ENV GO_DEBUG=true
 
-RUN ./go -T
+RUN ./go clobber
 
 ENTRYPOINT ["./go"]
 CMD ["-T"]
